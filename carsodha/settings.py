@@ -76,11 +76,14 @@ WSGI_APPLICATION = 'carsodha.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'carsodha_db',
+        'USER': 'postgres',
+        'PASSWORD': 'Chinni@66',
+        'HOST': 'localhost',
+        'PORT': '5432',
+        }
+        }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -112,7 +115,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -123,3 +126,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'carsodha/static'),
 ]
+
+
+# media settings
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
